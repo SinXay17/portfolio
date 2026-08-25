@@ -1,25 +1,22 @@
-/* =========================================================
+/*
    main.js — ໂຄ້ດ JavaScript ທັງໝົດຂອງເວັບ
    ໃຊ້ IIFE ຫຸ້ມໄວ້ ເພື່ອບໍ່ໃຫ້ຕົວແປຮົ່ວອອກໄປ global scope
-   ໝາຍເຫດ: ຕ້ອງໂຫຼດ js/i18n.js ກ່ອນໄຟລ໌ນີ້
-   ========================================================= */
+   ໝາຍເຫດ: ຕ້ອງໂຫຼດ js/i18n.js ກ່ອນໄຟລ໌ນີ້ */
 (function () {
   'use strict';
 
-  /* ---------- ຕົວຊ່ວຍສັ້ນໆ ແທນ document.querySelector ---------- */
+  /* ຕົວຊ່ວຍສັ້ນໆ ແທນ document.querySelector */
   const $  = (sel) => document.querySelector(sel);
   const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 
-  /* ---------- ອ່ານ/ຂຽນ localStorage ແບບປອດໄພ (ບາງ browser ປິດໄວ້) ---------- */
+  /* ອ່ານ/ຂຽນ localStorage ແບບປອດໄພ (ບາງ browser ປິດໄວ້ */
   const store = {
     get(key) { try { return localStorage.getItem(key); } catch (e) { return null; } },
     set(key, val) { try { localStorage.setItem(key, val); } catch (e) { /* ignore */ } }
   };
 
-  /* =======================================================
-     1) ເມນູມືຖື (Hamburger)
-     ກົດປຸ່ມ → ເພີ່ມ/ຖອດ class "open" ໃຫ້ເມນູ (CSS ເປັນຄົນເຮັດ animation)
-     ======================================================= */
+  /* ເມນູມືຖື (Hamburger)
+     ກົດປຸ່ມ → ເພີ່ມ/ຖອດ class "open" ໃຫ້ເມນູ (CSS ເປັນຄົນເຮັດ animation)*/
   const navToggle = $('#navToggle');
   const navMenu   = $('#navMenu');
 
@@ -38,15 +35,7 @@
   // ກົດລິ້ງໃນເມນູແລ້ວ ໃຫ້ປິດເມນູອັດຕະໂນມັດ (ສຳຄັນໃນມືຖື)
   $$('.nav__link').forEach((link) => link.addEventListener('click', closeMenu));
 
-  /* =======================================================
-     2) ສະຫຼັບພາສາ ລາວ ⇄ ອັງກິດ (i18n)
-     ວິທີເຮັດວຽກ:
-       - ທຸກ element ທີ່ຢາກໃຫ້ແປ ຈະມີ data-i18n="key" ໃນ HTML
-       - ເອົາ key ໄປຊອກຫາໃນ TRANSLATIONS[lang] (ຢູ່ໄຟລ໌ i18n.js)
-       - ໄດ້ຄຳແປແລ້ວກໍຢັດໃສ່ຄືນ
-     ຂໍ້ດີກວ່າການຍິງ API ແປພາສາ: ໄວທັນທີ, ໃຊ້ offline ໄດ້,
-     ບໍ່ເສຍເງິນ, ແລະ ຄວບຄຸມຄຳສັບເຕັກນິກ/ຊື່ຄົນໄດ້ 100%
-     ======================================================= */
+  /* ສະຫຼັບພາສາ ລາວ ⇄ ອັງກິດ (i18n) */
   const langBtn      = $('#langBtn');
   const SUPPORTED    = ['lo', 'en'];
   const DEFAULT_LANG = 'lo';
@@ -91,11 +80,9 @@
     applyLang(document.documentElement.lang === 'lo' ? 'en' : 'lo');
   });
 
-  /* =======================================================
-     3) ສະຫຼັບ Theme ສະຫວ່າງ / ມືດ
+  /* ສະຫຼັບ Theme ສະຫວ່າງ / ມືດ
      - ເກັບຄ່າໄວ້ໃນ localStorage ເພື່ອຈື່ໄວ້ຮອບໜ້າ
-     - ຖ້າຍັງບໍ່ເຄີຍເລືອກ ໃຫ້ໃຊ້ຄ່າຕາມລະບົບຂອງເຄື່ອງ
-     ======================================================= */
+     - ຖ້າຍັງບໍ່ເຄີຍເລືອກ ໃຫ້ໃຊ້ຄ່າຕາມລະບົບຂອງເຄື່ອງ */
   const themeBtn = $('#themeBtn');
   const root     = document.documentElement; // <html>
 
@@ -112,10 +99,8 @@
     applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
   });
 
-  /* =======================================================
-     4) Reveal on scroll — ໃຫ້ element ຄ່ອຍໆ ລອຍຂຶ້ນມາຕອນເລື່ອນເຫັນ
-     ໃຊ້ IntersectionObserver ເຊິ່ງເບົາກວ່າການຟັງ scroll ຕະຫຼອດເວລາ
-     ======================================================= */
+  /* Reveal on scroll — ໃຫ້ element ຄ່ອຍໆ ລອຍຂຶ້ນມາຕອນເລື່ອນເຫັນ
+     ໃຊ້ IntersectionObserver ເຊິ່ງເບົາກວ່າການຟັງ scroll ຕະຫຼອດເວລາ */
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -129,10 +114,8 @@
 
   $$('.reveal').forEach((el) => revealObserver.observe(el));
 
-  /* =======================================================
-     5) ແຖບລະດັບພາສາ — ຂະຫຍາຍຄວາມກວ້າງຕອນເລື່ອນມາເຫັນ
-     ອ່ານຄ່າ % ຈາກ attribute data-level ໃນ HTML
-     ======================================================= */
+  /* ແຖບລະດັບພາສາ — ຂະຫຍາຍຄວາມກວ້າງຕອນເລື່ອນມາເຫັນ
+     ອ່ານຄ່າ % ຈາກ attribute data-level ໃນ HTML */
   const barObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -147,9 +130,7 @@
 
   $$('.bar').forEach((bar) => barObserver.observe(bar));
 
-  /* =======================================================
-     6) ໄຮໄລທ໌ເມນູຕາມ section ທີ່ກຳລັງເບິ່ງຢູ່ (scroll spy)
-     ======================================================= */
+  /* ໄຮໄລທ໌ເມນູຕາມ section ທີ່ກຳລັງເບິ່ງຢູ່ (scroll spy) */
   const spyObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -166,9 +147,7 @@
 
   $$('section[id]').forEach((sec) => spyObserver.observe(sec));
 
-  /* =======================================================
-     7) ປຸ່ມເລື່ອນຂຶ້ນເທິງສຸດ
-     ======================================================= */
+  /* ປຸ່ມເລື່ອນຂຶ້ນເທິງສຸດ */
   const toTop = $('#toTop');
 
   window.addEventListener('scroll', () => {
@@ -179,8 +158,6 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  /* =======================================================
-     8) ໃສ່ປີປັດຈຸບັນໃນ footer ອັດຕະໂນມັດ
-     ======================================================= */
+  /* ໃສ່ປີປັດຈຸບັນໃນ footer ອັດຕະໂນມັດ */
   $('#year').textContent = new Date().getFullYear();
 })();
