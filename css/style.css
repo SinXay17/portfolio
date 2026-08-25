@@ -28,9 +28,7 @@ html[data-theme="dark"]{
   --shadow:  0 6px 20px rgba(0,0,0,.35);
 }
 
-/* =========================================================
-   2) Reset ພື້ນຖານ + ຟອນ Phetsarath OT
-   ========================================================= */
+/* 2) Reset ພື້ນຖານ + ຟອນ Phetsarath OT */
 *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
 
 html{ scroll-behavior:smooth; scroll-padding-top:80px; } /* ກົດເມນູແລ້ວເລື່ອນນຸ້ມໆ ບໍ່ໃຫ້ navbar ບັງ */
@@ -49,9 +47,7 @@ ul{ list-style:none; }
 
 .container{ width:min(100% - 2.5rem, var(--max)); margin-inline:auto; }
 
-/* =========================================================
-   3) NAVBAR
-   ========================================================= */
+/* 3) NAVBAR */
 .nav{
   position:sticky; top:0; z-index:50;
   background:color-mix(in srgb, var(--bg) 85%, transparent);
@@ -98,9 +94,7 @@ ul{ list-style:none; }
 .nav__toggle.open span:nth-child(2){ opacity:0; }
 .nav__toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
-/* =========================================================
-   4) HERO
-   ========================================================= */
+/* 4) HERO */
 .hero{ padding:4rem 0 3rem; }
 .hero__inner{ display:grid; grid-template-columns:1.4fr 1fr; gap:2.5rem; align-items:center; }
 .hero__hi{ color:var(--accent); font-weight:700; }
@@ -131,9 +125,7 @@ ul{ list-style:none; }
 .hero__info li{ display:flex; gap:.7rem; align-items:flex-start; color:var(--muted); font-size:.92rem; padding:.4rem 0; }
 .hero__info span{ color:var(--accent); }
 
-/* =========================================================
-   5) SECTION / CARD / LIST
-   ========================================================= */
+/* 5) SECTION / CARD / LIST */
 .section{ padding:3.5rem 0; }
 .section--alt{ background:color-mix(in srgb, var(--primary) 5%, var(--bg)); }
 
@@ -185,9 +177,7 @@ ul{ list-style:none; }
 
 
 
-/* =========================================================
-   6) FOOTER + ປຸ່ມຂຶ້ນເທິງ
-   ========================================================= */
+/*  6) FOOTER + ປຸ່ມຂຶ້ນເທິງ */
 .footer{ border-top:1px solid var(--border); padding:1.75rem 0; text-align:center; color:var(--muted); font-size:.88rem; }
 
 .to-top{
@@ -199,9 +189,7 @@ ul{ list-style:none; }
 }
 .to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
 
-/* =========================================================
-   7) Animation ຕອນເລື່ອນລົງມາເຫັນ (reveal)
-   ========================================================= */
+/* 7) Animation ຕອນເລື່ອນລົງມາເຫັນ (reveal) */
 .reveal{ opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
 .reveal.visible{ opacity:1; transform:none; }
 
@@ -211,9 +199,7 @@ ul{ list-style:none; }
   .reveal{ opacity:1; transform:none; }
 }
 
-/* =========================================================
-   8) RESPONSIVE — ແທັບເລັດ ແລະ ມືຖື
-   ========================================================= */
+/* 8) RESPONSIVE — ແທັບເລັດ ແລະ ມືຖື */
 @media (max-width:900px){
   .hero__inner{ grid-template-columns:1fr; }
   .grid--3{ grid-template-columns:repeat(2,1fr); }
