@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8" />
+  <!-- ทำให้เว็บย่อ/ขยายตามหน้าจอมือถือได้ถูกต้อง (สำคัญมากสำหรับ responsive) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio ຂອງ ສິນໄຊ ສິດທິໂວຫານ - Backend Developer (Odoo / Node.js / PostgreSQL)" />
+  <title>ສິນໄຊ ສິດທິໂວຫານ | Backend Developer</title>
+
+  <!-- ຟອນ Phetsarath OT ຈາກ Google Fonts (ຖ້າເຄື່ອງມີຟອນຢູ່ແລ້ວກໍຈະໃຊ້ຂອງເຄື່ອງ) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Phetsarath:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="nav__logo"><span>Sinxay</span></a>
+
+      <!-- ປຸ່ມ hamburger ສະແດງສະເພາະໜ້າຈໍນ້ອຍ -->
+      <button class="nav__toggle" id="navToggle" aria-label="ເປີດເມນູ" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__menu" id="navMenu">
+        <a href="#home"       class="nav__link" data-i18n="nav.about">ກ່ຽວກັບ</a>
+        <a href="#education"  class="nav__link" data-i18n="nav.education">ການສຶກສາ</a>
+        <a href="#experience" class="nav__link" data-i18n="nav.experience">ປະສົບການ</a>
+        <a href="#projects"   class="nav__link" data-i18n="nav.projects">ໂປຣເຈັກ</a>
+        <a href="#skills"     class="nav__link" data-i18n="nav.skills">ທັກສະ</a>
+        <a href="#contact"    class="nav__link" data-i18n="nav.contact">ຕິດຕໍ່</a>
+
+        <div class="nav__tools">
+          <!-- ປຸ່ມສະຫຼັບພາສາ: ຂໍ້ຄວາມໃນປຸ່ມຈະຖືກປ່ຽນໂດຍ JS -->
+          <button class="lang-btn" id="langBtn" aria-label="Switch language">EN</button>
+          <button class="theme-btn" id="themeBtn" aria-label="ສະຫຼັບ theme">🌙</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__text reveal">
+          <p class="hero__hi"   data-i18n="hero.hi">ສະບາຍດີ, ຂ້ອຍຊື່</p>
+          <h1 class="hero__name" data-i18n="hero.name">ສິນໄຊ ສິດທິໂວຫານ</h1>
+          <p class="hero__role" data-i18n="hero.role">Backend Developer</p>
+          <p class="hero__desc" data-i18n="hero.desc">
+            ນັກສຶກສາຊັ້ນປີທີ 4 ສາຂາໂປຣແກຣມມິ່ງ ທີ່ມີພື້ນຖານດ້ານ HTML, CSS, JavaScript
+            ແລະ ມີປະສົບການຝຶກງານດ້ານການພັດທະນາລະບົບ Odoo ຕ້ອງການສືບຕໍ່ພັດທະນາຕົນເອງ
+            ໃນຕຳແໜ່ງ Backend Developer ພ້ອມຮຽນຮູ້ ແລະ ຮັບຄວາມທ້າທາຍໃໝ່ໆ.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact"  class="btn btn--primary" data-i18n="hero.btnContact">ຕິດຕໍ່ຂ້ອຍ</a>
+            <a href="#projects" class="btn btn--ghost"   data-i18n="hero.btnProjects">ເບິ່ງໂປຣເຈັກ</a>
+          </div>
+        </div>
+
+        <div class="hero__card reveal">
+          <div class="avatar">ສ</div>
+          <ul class="hero__info">
+            <li><span>☎</span> 020 5615 5616</li>
+            <li><span>✉</span> sinxaynajah@gmail.com</li>
+            <li><span>⌂</span> <span data-i18n="hero.address">ບ້ານສີວິໄລ, ເມືອງໄຊທານີ, ນະຄອນຫຼວງວຽງຈັນ</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION + CERTIFICATE ================= -->
+    <section class="section" id="education">
+      <div class="container">
+        <h2 class="section__title reveal" data-i18n="edu.title">ການສຶກສາ</h2>
+        <div class="card reveal">
+          <h3 class="card__title" data-i18n="edu.school">ສະຖາບັນ Soutsaka</h3>
+          <p class="card__meta"  data-i18n="edu.meta">ສາຂາວິຊາ: ໂປຣແກຣມມິ່ງ (Programming)  |  ກຳລັງສຶກສາ ຊັ້ນປີທີ 4</p>
+        </div>
+
+        <h2 class="section__title reveal" data-i18n="cert.title">ໃບຢັ້ງຢືນ</h2>
+        <div class="card reveal">
+          <h3 class="card__title" data-i18n="cert.name">ໃບຢັ້ງຢືນຝຶກງານ</h3>
+          <p class="card__meta"  data-i18n="cert.meta">ກຳລັງດຳເນີນການ — ຄາດວ່າຈະໄດ້ຮັບພາຍໃນອາທິດໜ້າ</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="section section--alt" id="experience">
+      <div class="container">
+        <h2 class="section__title reveal" data-i18n="exp.title">ປະສົບການເຮັດວຽກ</h2>
+
+        <div class="timeline">
+          <article class="timeline__item reveal">
+            <h3 class="card__title" data-i18n="exp.role">Developer (ຝຶກງານ)</h3>
+            <p class="card__meta"  data-i18n="exp.company">ບໍລິສັດ LaoOdoo (ໃນເຄືອ KOLAO Group)  |  ໄລຍະເວລາ 2 ເດືອນ</p>
+            <ul class="list">
+              <!-- ໃຊ້ data-i18n-html ເພາະຂໍ້ຄວາມມີແທັກ <strong> ຢູ່ຂ້າງໃນ -->
+              <li data-i18n-html="exp.li1"><strong>UI &amp; Report Customization:</strong> ປັບແຕ່ງໜ້າ View ແລະ ອອກແບບໂຄງສ້າງໃບລາຍງານ (Purchase Orders, Receipts, Invoices) ໂດຍໃຊ້ XML/QWeb templates ເພື່ອດຶງຂໍ້ມູນ dynamic ຈາກ Database</li>
+              <li data-i18n-html="exp.li2"><strong>Module Development:</strong> ພັດທະນາໂມດູນ (Module) ໃໝ່ ໂດຍສ້າງ Custom Wizard ເພື່ອຄົ້ນຫາ/ດຶງຂໍ້ມູນຂ້າມໂມດູນ (ເຊັ່ນ: Point of Sale, Inventory)</li>
+              <li data-i18n-html="exp.li3"><strong>Access Rights &amp; Security:</strong> ຕັ້ງຄ່າສິດການເຂົ້າເຖິງ ແລະ ຄວາມປອດໄພຂອງຂໍ້ມູນ (CRUD Permissions) ຜ່ານ ir.model.access.csv</li>
+              <li data-i18n-html="exp.li4"><strong>Environment Setup:</strong> ຕິດຕັ້ງ ແລະ ຄອນຟິກລະບົບ Odoo ເທິງ Linux environment ຜ່ານ Command Line Interface (CLI)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section__title reveal" data-i18n="proj.title">Personal &amp; Academic Projects</h2>
+
+        <div class="grid grid--2">
+          <article class="card reveal">
+            <h3 class="card__title" data-i18n="proj1.title">User Authentication System</h3>
+            <p class="tags">
+              <span class="tag">Node.js</span><span class="tag">TypeScript</span>
+              <span class="tag">Express</span><span class="tag">PostgreSQL</span>
+            </p>
+            <ul class="list">
+              <li data-i18n="proj1.li1">ສ້າງລະບົບ Login/Register ແບບ Full-Stack ພ້ອມ RESTful API endpoints ສຳລັບ User Authentication</li>
+              
+              <li data-i18n="proj1.li3">ອອກແບບ PostgreSQL schema ແລະ integrated ເຂົ້າກັບ pg connection pooling</li>
+              <li data-i18n="proj1.li4">ສ້າງ Frontend ດ້ວຍ Vanilla JS/HTML/CSS ທີ່ເປັນ Responsive ພ້ອມ async form handling ຜ່ານ Fetch API</li>
+            </ul>
+          </article>
+
+          <article class="card reveal">
+            <h3 class="card__title" data-i18n="proj2.title">ແອັບພລິເຄຊັນ POS ສຳລັບຮ້ານອາຫານ</h3>
+            <p class="tags">
+              <span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">Desktop</span>
+            </p>
+            <ul class="list">
+              <li data-i18n="proj2.li1">ພັດທະນາແອັບພລິເຄຊັນ POS ເທິງ Desktop ສຳລັບຮ້ານອາຫານ ດ້ວຍ Python/Tkinter</li>
+              <li data-i18n="proj2.li2">ອອກແບບລະບົບເມນູແຍກຕາມໝວດໝູ່ (ອາຫານ, ເຄື່ອງດື່ມ, ຂອງຫວານ) ທີ່ສາມາດ ເພີ່ມ/ແກ້ໄຂ/ລຶບ ແບບໄດນາມິກ ພ້ອມຟັງຊັນອັບໂຫຼດ ແລະ ຈັດເກັບຮູບພາບ</li>
+              <li data-i18n="proj2.li3">ພັດທະນາລະບົບກະຕ່າສິນຄ້າແບບ Real-time ຢູ່ Sidebar ຮອງຮັບການປັບຈຳນວນ, ລຶບລາຍການ ແລະ ຄິດໄລ່ລາຄາລວມແບບອັດຕະໂນມັດ</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <h2 class="section__title reveal" data-i18n="skills.title">ທັກສະ</h2>
+
+        <div class="grid grid--3">
+          <div class="card reveal">
+            <h3 class="card__title" data-i18n="skills.lang">Languages</h3>
+            <p class="tags">
+              <span class="tag">JavaScript</span><span class="tag">Node.js</span>
+              <span class="tag">Python</span><span class="tag">SQL</span>
+              <span class="tag">HTML/CSS</span>
+            </p>
+          </div>
+          <div class="card reveal">
+            <h3 class="card__title" data-i18n="skills.backend">Backend &amp; Databases</h3>
+            <p class="tags">
+              <span class="tag">Express</span><span class="tag">PostgreSQL</span>
+              <span class="tag">RESTful APIs</span>
+            </p>
+          </div>
+          <div class="card reveal">
+            <h3 class="card__title" data-i18n="skills.tools">Frameworks &amp; Tools</h3>
+            <p class="tags">
+              <span class="tag">Odoo ERP</span><span class="tag">Git/GitHub</span>
+              <span class="tag">VS Code</span><span class="tag">Claude / Gemini</span>
+            </p>
+          </div>
+        </div>
+
+        
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section__title reveal" data-i18n="contact.title">ຕິດຕໍ່</h2>
+        <div class="grid grid--3">
+          <a class="card card--link reveal" href="tel:+8562056155616">
+            <span class="card__icon">☎</span>
+            <h3 class="card__title" data-i18n="contact.phone">ໂທລະສັບ</h3>
+            <p class="card__meta">020 5615 5616</p>
+          </a>
+          <a class="card card--link reveal" href="mailto:sinxaynajah@gmail.com">
+            <span class="card__icon">✉</span>
+            <h3 class="card__title" data-i18n="contact.email">ອີເມວ</h3>
+            <p class="card__meta">sinxaynajah@gmail.com</p>
+          </a>
+          <div class="card card--link reveal">
+            <span class="card__icon">⌂</span>
+            <h3 class="card__title" data-i18n="contact.address">ທີ່ຢູ່</h3>
+            <p class="card__meta" data-i18n="hero.address">ບ້ານສີວິໄລ, ເມືອງໄຊທານີ, ນະຄອນຫຼວງວຽງຈັນ</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> <span data-i18n="footer.text">ສິນໄຊ ສິດທິໂວຫານ — Backend Developer</span></p>
+    </div>
+  </footer>
+
+  <!-- ປຸ່ມເລື່ອນຂຶ້ນເທິງສຸດ -->
+  <button class="to-top" id="toTop" aria-label="ຂຶ້ນເທິງສຸດ">↑</button>
+
+  <!-- i18n.js ຕ້ອງໂຫຼດກ່ອນ main.js ເພາະ main.js ໃຊ້ຕົວແປ TRANSLATIONS -->
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
