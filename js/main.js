@@ -160,4 +160,15 @@
 
   /* ໃສ່ປີປັດຈຸບັນໃນ footer ອັດຕະໂນມັດ */
   $('#year').textContent = new Date().getFullYear();
+
 })();
+
+  function openModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none";
+}
