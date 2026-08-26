@@ -173,6 +173,16 @@ ul{ list-style:none; }
 .hero__info li{ display:flex; gap:.7rem; align-items:flex-start; color:var(--muted); font-size:.92rem; padding:.4rem 0; }
 .hero__info span{ color:var(--accent); }
 
+.hero__info a{
+  color:var(--muted);
+  border-bottom:1px dashed var(--border);
+  transition:color .2s, border-color .2s;
+}
+.hero__info a:hover{
+  color:var(--primary);
+  border-bottom-color:var(--primary);
+}
+
 /* 5) SECTION / CARD / LIST */
 .section{ padding:3.5rem 0; }
 .section--alt{ background:color-mix(in srgb, var(--primary) 5%, var(--bg)); }
